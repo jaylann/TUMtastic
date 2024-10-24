@@ -1,0 +1,237 @@
+Question,Answer
+What is cryptography?,Cryptography refers to methods for encrypting and decrypting information.
+What is cryptanalysis?,Cryptanalysis is the science of methods for decrypting encrypted data.
+What was the Enigma machine used for?,The Enigma machine was a legendary cipher machine used by the German military during World War II.
+"How many rotors did the Enigma machine use, and how many letters of the alphabet did it encrypt?",The Enigma machine used 3 rotors with 26 letters of the alphabet.
+What innovative feature did the Enigma machine have regarding encryption?,"The position of the rotors changed with each input, meaning the same letter input would produce a different encrypted letter for each instance."
+"Who successfully cracked the Enigma machine's code, and where did this occur?",Alan Turing successfully cracked the Enigma code at Bletchley Park in 1940.
+What does the set M represent in a cryptographic system?,"The set M represents the plaintexts, where m belongs to M* and is defined over an alphabet M, such as M={0,1}."
+What is the role of the set C in a cryptographic system?,"The set C represents the ciphertexts, where c belongs to C* and is defined over an alphabet C, such as C={0,1}."
+What does the set K include in a cryptographic system?,"The set K includes the keys, with elements e and d belonging to K."
+What is the function of E in a cryptographic system?,"E is the family of encryption algorithms, defined as E = {Ee | Ee : M* → C*}, which transforms plaintexts into ciphertexts."
+What is the function of D in a cryptographic system?,"D is the family of decryption algorithms, defined as D = {Dd | Dd : C* → M*}, which transforms ciphertexts back into plaintexts."
+"What is the relationship between plaintext, ciphertext, and keys in a cryptographic system?","If m ∈ M*, then E encrypts m to c by c = Ee(m), and there exists a key d ∈ K such that the decryption of c yields m as m = Dd(c)."
+What is a cryptographic system comprised of?,"A cryptographic system is comprised of the sets of plaintexts (M), ciphertexts (C), keys (K), and the families of encryption (E) and decryption (D) algorithms."
+Can you name procedures for E (encryption)?,"Yes, common procedures for E (encryption) include symmetric key algorithms (like AES), asymmetric key algorithms (like RSA), and hash functions."
+What are the two classes of cryptographic procedures mentioned?,Symmetric and asymmetric procedures.
+What is a characteristic of symmetric procedures in terms of encryption and decryption?,"In symmetric procedures, the encryption (E) and decryption (D) algorithms are typically simple and quick to compute, and both use the same secret key."
+What is meant by 'Secret-Key' in the context of symmetric cryptographic procedures?,"'Secret-Key' means that both the encryption and decryption processes use the same secret key, which must be kept confidential."
+"In the example given, how does Alice send a message to Bob using symmetric encryption?","Alice encrypts her message m using the encryption function Ee with the secret key e to produce ciphertext c, which she then sends to Bob. Bob uses the same key e to decrypt the ciphertext back into the original message m using De."
+What are the two main tasks Alice performs when storing data securely using symmetric encryption?,"1) Encrypting the data m with e to produce ciphertext c (Ee(m) = c), and 2) Decrypting the ciphertext c back to data m using the same secret key e (De(c) = m)."
+What is the formula for encryption using the Caesar cipher?,"Ee(m) = (m + e) mod 26, where 'm' is the message and 'e' is the shift."
+What is the formula for decryption using the Caesar cipher?,"De(c) = (c - e) mod 26, where 'c' is the ciphertext and 'e' is the shift."
+"In the Caesar cipher, what is the range of values for the key 'K'?","K = {0, 1, ..., 25}, representing the possible shift values."
+What does the Caesar cipher map letters A to Z onto in the example provided?,"The letters A to Z are mapped onto the residue class ring over {0, 1, ..., 25}."
+Why is breaking the Caesar cipher considered difficult?,"It is difficult to break because there are many possible keys (j, n), specifically 26 different shift values."
+"In the example where m=ITSICHERHEIT and e=3, how is the encryption result E3(8 19 18 8 2 7 4 17 7 4 8 19) calculated?",The encryption is calculated by adding the shift of 3 to each number in the sequence and applying mod 26.
+What is the resulting ciphertext when m=ITSICHERHEIT and e=3 is encrypted?,The resulting ciphertext is LWVLFK.
+What is the basis of the encryption and decryption methods in asymmetric cryptography?,They are based on number theory.
+What type of key pair does each entity have in asymmetric cryptography?,"Each entity possesses its own unique key pair, consisting of a public key (e) and a private key (d)."
+What is the role of the public key in asymmetric cryptography?,The public key (e) is public information that can be shared with anyone.
+What does the private key in asymmetric cryptography signify?,"The private key (d), for example dB for Bob, is known only to the individual and must be kept secret."
+How is the encryption process represented in asymmetric cryptography?,"The encryption process is represented as Ee(m) = c, where m is the plaintext message and c is the ciphertext."
+How is the decryption process represented in asymmetric cryptography?,"The decryption process is represented as Dd(c) = m, where c is the ciphertext and m is the original plaintext message."
+Why is the method referred to as asymmetric cryptography?,It is called asymmetric because the public key (e) and the private key (d) are not equal.
+What does the term Public-Key Cryptography indicate about the keys used?,"The term indicates that the encryption key (e) is public, meaning it is accessible to everyone."
+What is required for Alice to encrypt her message m for Bob using asymmetric encryption?,Alice needs Bob's public key eB to encrypt the message m.
+"If Alice encrypts the message m using her private key dA, what is the resulting ciphertext c'?","c' = EdA(m), where EdA is the encryption function using Alice's private key."
+What is the correct statement regarding Bob's ability to decrypt c' when Alice encrypts m with her private key dA?,"(a) is false, (b) is true, (c) is false, (d) is true."
+Who can decrypt the ciphertext c' when it is encrypted with Alice's private key dA?,"Only Alice can decrypt c', thus making it not confidential for Bob."
+What does the statement (a) imply when saying Bob can decrypt c' with his public key eB?,"It implies a misunderstanding of asymmetric encryption, as c' cannot be decrypted by Bob with his public key."
+What does the statement (d) imply about the confidentiality of message m when c' can be decrypted by anyone?,It indicates that the message m is not confidential since it can be decrypted by anyone who has access to c'.
+What are the components of Alice's key pair in asymmetric encryption?,Alice's key pair consists of the public key (eA) and the private key (dA).
+What is the method used for secure storage of data (m) in asymmetric encryption?,"The method used for secure storage of data (m) is encryption, resulting in c = encrypt(m)."
+How is the encrypted data (c) decrypted to retrieve the original data (m)?,"The encrypted data (c) is decrypted using the private key, resulting in m = decrypt(c)."
+Why must private keys be managed confidentially in asymmetric encryption?,Private keys must be managed confidentially to ensure the security of the encrypted data.
+Give an example of the types of data that are typically encrypted using asymmetric encryption.,Typical examples of data encrypted using asymmetric encryption include digital signatures and small sensitive data like session keys.
+Why is asymmetric encryption considered more complex than symmetric encryption?,Asymmetric encryption is considered more complex than symmetric encryption due to the use of key pairs (public and private keys) and the computational effort required for the encryption and decryption processes.
+What is a common storage method for private keys to maintain their confidentiality?,A common storage method for private keys is to keep them password-protected on a hard disk or a USB stick.
+What is the Kerckhoffs principle in cryptography?,"The Kerckhoffs principle states that the strength of a cryptographic method should only depend on the quality of the secret key, not on the secrecy of the method itself."
+What does the term 'Security by Obscurity' refer to in the context of cryptographic methods?,"'Security by Obscurity' refers to the belief that a cryptographic method's security can be ensured by keeping the method itself secret, which is countered by the Kerckhoffs principle."
+Why must the keyspace be large in cryptographic systems according to the Kerckhoffs principle?,"The keyspace must be large to ensure that brute-force attacks, which involve trying all possible keys, cannot be successfully executed with practical effort."
+What is a brute-force attack in the context of cryptography?,A brute-force attack is a method of breaking cryptographic security by systematically trying all possible keys until the correct one is found.
+How many possible keys does the DES (Data Encryption Standard) have?,"The DES method has a keyspace of 256, which amounts to 72,057,594,037,927,936 possible keys."
+Why is the keyspace of DES considered too small for today's computing power?,"The keyspace of DES is considered too small because modern computational capabilities make it feasible to perform brute-force attacks against it, compromising its security."
+What is the minimum key length for symmetric cryptographic methods according to the given requirements?,"The minimum key length for symmetric cryptographic methods is 128 bits, with 256 bits being better."
+What is the minimum key length for RSA asymmetric cryptographic methods starting from 2023?,"The minimum key length for RSA asymmetric cryptographic methods starting from 2023 is 3000 bits, with examples such as 4096 bits."
+What is the minimum key length for ECC (Elliptic Curve Cryptography)?,The minimum key length for ECC is 250 bits.
+What are some examples of symmetric cryptographic methods mentioned in the text?,"Examples of symmetric cryptographic methods mentioned include AES with key sizes of 128, 192, or 256 bits and ChaCha20 with a 256-bit key."
+What are the various key lengths for RSA mentioned in the text?,"The key lengths for RSA mentioned in the text are 1024, 2048, and 4096 bits."
+What key lengths are indicated for ECC in the document?,"The key lengths indicated for ECC include 160, 256, and 512 bits."
+What is the process of dividing plaintext m in symmetric cryptography?,"The plaintext m is divided into blocks of fixed length, such as 128 bits, represented as m = m1 || m2 || … || mn."
+How is encryption performed in block ciphers?,"Encryption is performed block-wise using the same key k, with the formula E_k(m) = c, where c = c1 || c2 || … || cn and c_i = E_k(m_i)."
+What is the decryption process in block ciphers?,"The decryption process is D_k(c) = m, where m_i = D_k(c_i)."
+What are the key lengths used in AES encryption?,AES encryption uses key lengths of 128 bits and 256 bits.
+Is using the same key k for all blocks mi a security problem? (Yes/No),"Yes, using the same key k for all blocks can lead to security issues."
+Do identical blocks mi result in identical ciphertext ci? (Yes/No),"Yes, identical blocks mi will result in identical ciphertext ci."
+What is the impact of identical plaintext blocks on encryption security?,The use of identical plaintext blocks can reveal patterns and is considered a security problem.
+What is the purpose of padding in block ciphers?,Padding serves to fill the plaintext so that its length is a multiple of the block size.
+When is padding added and when is it removed in the encryption process?,Padding is added during encryption and removed during decryption.
+How can padding be distinguished from the content in a message?,"Padding can be distinguished from the content by its format; for example, in practice, PKCS#7 padding is used."
+What does PKCS#7 padding do to the plaintext?,"PKCS#7 padding adds a number of bytes, each having the same value, where the value in each byte indicates the number of added bytes."
+"In the PKCS#7 padding scheme, what value is used in the padding bytes?",The value in the padding bytes corresponds to the total number of padding bytes added.
+"If a plaintext message has a length of 16 bytes, how does PKCS#7 padding modify it if 3 bytes are needed?","PKCS#7 padding would add three bytes, each containing the value '03' to indicate that three bytes of padding have been added."
+What is the principle of diffusion in block ciphers?,"Diffusion means that every plaintext bit affects every ciphertext bit, typically achieved through bitwise permutation."
+Which cipher is an example of a technique that uses bitwise permutation for diffusion?,The DES (Data Encryption Standard) algorithm is an example that uses bit permutation for diffusion.
+What is the goal of confusion in block ciphers?,The goal of confusion is to obscure the relationship between the key and the ciphertext.
+What technique is often used to achieve confusion in block ciphers?,"Non-linear substitutions are used for confusion, such as the S-Box in the AES (Advanced Encryption Standard) algorithm."
+What is the avalanche effect in cryptography?,"The avalanche effect refers to the phenomenon where a small change in input (like a single bit) causes a large change in output, with the probability that any output bit changes being approximately 50%."
+What is an example of a non-linear substitution used in confusion?,The S-Box in the AES algorithm is an example of a non-linear substitution used for confusion.
+What is the AES (Advanced Encryption Standard) and when was it established?,AES is the NIST standard for symmetric encryption established in 2002.
+What are the possible key lengths for AES encryption?,"The possible key lengths for AES encryption are 128, 192, or 256 bits."
+How is a 128-bit input represented in AES?,A 128-bit input is represented as a 4x4 byte matrix in AES.
+How many rounds does an AES encryption perform depending on the key length?,"AES encryption performs 10 rounds for 128-bit keys, 12 rounds for 192-bit keys, and 14 rounds for 256-bit keys."
+What is a significant feature of AES in terms of security?,"AES is considered a very secure algorithm due to its strong avalanche effect, where every output bit depends on the input and all key bits."
+What type of encryption methods is AES used in?,AES is used in various applications including TLS and WhatsApp.
+What is meant by 'rounds' in the context of AES encryption?,Rounds refer to the repeated application of the same sequence of operations on the plaintext during the encryption process.
+What is the purpose of confusion in cryptography?,"Confusion aims to obscure the relationship between the plaintext input and the ciphertext output, making it difficult to derive the key."
+What role does the S-Box play in the substitution process of an encryption algorithm?,"The S-Box is used for non-linear substitution, transforming each input byte into a different output byte according to a fixed table."
+How does the ShiftRows operation contribute to diffusion in encryption?,"ShiftRows performs a cyclic left shift of the rows in the state array, which helps to mix the bytes within each row."
+"What is the MixColumns operation, and how does it work?","MixColumns multiplies each column of the 4x4 matrix by a fixed matrix in GF(2^8), linking every byte in the column with every other byte in the same column."
+"What is GF(2^8), and why is it important in cryptography?","GF(2^8) is a finite field with 256 elements, commonly used in cryptographic algorithms for operations like multiplication in the MixColumns step."
+What is the purpose of the SubBytes operation in cryptography?,"The SubBytes operation is used in cryptographic algorithms, particularly in the AES (Advanced Encryption Standard), to provide non-linearity by substituting bytes of data with other bytes according to a predefined substitution box (S-box)."
+What type of transformation is SubBytes in the context of block ciphers?,"SubBytes is an involution transformation that operates on individual bytes of the input data, essentially performing a byte-wise substitution."
+How does the SubBytes function contribute to the security of encryption algorithms?,"By introducing non-linearity and confusion into the encryption process, the SubBytes function helps to prevent certain types of cryptographic attacks, making it harder for an attacker to derive relationships between the plaintext and ciphertext."
+In which cryptographic standard is the SubBytes operation primarily used?,The SubBytes operation is primarily used in the AES (Advanced Encryption Standard).
+What is the S-box used in the SubBytes transformation?,The S-box is a predefined table used in the SubBytes transformation that specifies the byte substitutions for each possible input byte during encryption.
+What is the purpose of a stream cipher in cryptography?,"The purpose of a stream cipher is to encrypt a plaintext stream, such as voice data, efficiently."
+Why is XOR (⊕) used in practical encryption?,XOR (⊕) is used in practical encryption because it allows for fast operations.
+What is the major drawback of using XOR as an encryption method?,The major drawback of using XOR as an encryption method is that it is not a strong cipher.
+What is the One-Time Pad in cryptography?,The One-Time Pad is an encryption method that uses a unique pseudo-random key (KS) that is as long as the plaintext for encryption.
+How is encryption performed using the One-Time Pad?,Encryption using the One-Time Pad is performed by applying a bitwise XOR operation between the plaintext m and the key KS.
+What is required for the keystream KS in One-Time Pad encryption?,The keystream KS must be a pseudo-random bit sequence that is unique for each plaintext stream and has the same length as the plaintext.
+What is the relationship between the lengths of the plaintext and the keystream in One-Time Pad encryption?,The keystream KS must be the same length as the plaintext m for the One-Time Pad encryption.
+What is the core of a stream cipher?,The core of a stream cipher is a 'good' key stream (KS).
+How is the key stream (KS) generated in practice for stream ciphers?,"In practice, a cryptographic pseudo-random number generator (CSPRNG) initialized with a seed value k generates a sequence of pseudo-random numbers to create the key stream (KS)."
+What happens when the same seed value k is used again in the CSPRNG process?,"Using the same seed value k will result in a deterministic key stream generation, allowing KS to be reconstructed if k is known."
+Why must the seed value k be kept secret?,The seed value k must be kept secret because knowledge of k allows for the reconstruction of the key stream (KS).
+Does the secrecy of the seed value k depend on the length of the message?,"No, the secrecy of the seed value k is independent of the message length."
+What is an example of a seed used in stream ciphers?,An example of a seed used in stream ciphers is a symmetric 128-bit key k.
+What are the two approaches for implementing stream ciphers?,"The two approaches for implementing stream ciphers are: 1) Dedicated cipher, e.g., ChaCha20 (RFC 8438), and 2) Block cipher-based, where a CSPRNG is constructed using a block cipher."
+Give an example of a dedicated stream cipher.,"An example of a dedicated stream cipher is ChaCha20, which has been in use since 2008."
+What is required when using stream ciphers regarding plaintexts?,Different plaintexts m1 and m2 require different key sequences KS1 and KS2.
+What is the attack scenario when using the same key sequence KS for different messages?,"If the same key sequence KS is used, an attacker who knows c1 (the ciphertext of m1) and m2 could potentially determine m2."
+"Given the equations c1 = m1 ⊕ KS and c2 = m2 ⊕ KS, what does an attacker know?","The attacker knows c1, c2, and m1 but does not know m2."
+What is the consequence of using the same symmetric key for multiple messages?,The symmetric key k must change with each message to ensure security.
+How can the requirement to change the symmetric key for each message be achieved?,This can be achieved by using a counter in the encryption process.
+What is the main advantage of the Electronic Code Book (ECB) mode of block ciphers?,The main advantage of the ECB mode is the parallelization of encryption.
+What is one disadvantage of the ECB mode in block ciphers?,"One disadvantage of the ECB mode is that identical plaintext blocks encrypted with the same key produce identical ciphertext blocks, which means patterns in long messages are preserved."
+What can happen to a secure block cipher when used in ECB mode?,A secure block cipher can become vulnerable in ECB mode due to the potential for statistical analyses and pattern recognition.
+How does ECB mode affect the error propagation in block ciphers?,"In ECB mode, there is no error propagation, meaning that an error in one block does not affect the decryption of other blocks."
+What is the main principle behind the Cipher Block Chaining (CBC) mode of encryption?,"The main principle of CBC is to XOR the plaintext block with the previous ciphertext block, thereby chaining the blocks together."
+What is the purpose of the Initialization Vector (IV) in CBC mode?,"The Initialization Vector (IV) is used to ensure that identical plaintext blocks result in different ciphertext blocks, and it is not secret."
+"In the CBC encryption process, what does the formula 𝑐𝑖= 𝐸𝑘𝑚𝑖𝑐𝑖−1 represent?","This formula represents the encryption of the plaintext block 𝑚𝑖, where 𝑐𝑖 is the resulting ciphertext block, 𝐸𝑘 is the encryption function with key k, and 𝑐𝑖−1 is the previous ciphertext block."
+How is the first ciphertext block (𝑐0) initialized in CBC mode?,"The first ciphertext block (𝑐0) is initialized using the Initialization Vector (IV), such that 𝑐0 = IV."
+What is the decryption formula in the CBC mode?,"The decryption formula in CBC mode is 𝑚𝑖= 𝐷𝑘𝑐𝑖𝑐𝑖−1, where 𝐷𝑘 is the decryption function with key k."
+What is the effect of using different Initialization Vectors (IV) in the CBC mode with the same plaintext blocks and key?,Using different Initialization Vectors (IV) results in different ciphertext blocks even if the same plaintext blocks and key are used.
+Why is CBC mode considered significantly safer than ECB mode?,CBC mode is considered significantly safer than ECB mode because it incorporates an initialization vector that ensures that identical plaintext blocks will encrypt to different ciphertext blocks.
+What is the limitation of error propagation in the CBC mode?,The error propagation in the CBC mode is limited to only 2 blocks.
+What happens to the decryption of a block in CBC mode if a bit error occurs during transmission?,"If a bit error occurs during the transmission of a block, the decryption of the corrupted block will produce an erroneous plaintext, and this error will affect the decryption of the subsequent block, but not beyond that."
+"In the example scenario of error propagation, if block ci is transmitted with a bit error resulting in c'i, what will be the effect on the decryption of blocks ci+1 and ci+2?","The decryption of the block c'i will yield a faulty plaintext block mi', while the decryption of block ci+2 will remain correct despite the error in ci."
+What is the result when block c2 is faulty in a cryptographic system?,"When block c2 is faulty, the decrypted plaintext blocks m2 and m3 are also faulty."
+What is a Padding Oracle Attack?,A Padding Oracle Attack is a type of Man-in-the-Middle (MitM) attack where the attacker can determine the validity of padding in encrypted messages.
+What information does the attacker capture in a Padding Oracle Attack?,"The attacker captures the Initialization Vector (IV), the ciphertext blocks c1, and c2."
+How does the attacker manipulate the communication in a Padding Oracle Attack?,"The attacker sends modified ciphertext blocks (c’i) to the server, which acts as an oracle by responding with 'error' or 'ok' depending on the correctness of the padding."
+What is the significance of the server's response in a Padding Oracle Attack?,"The server's response indicates whether the modified ciphertext has correct padding, allowing the attacker to incrementally decipher the plaintext without knowing the secret key k."
+Can the attacker decipher the plaintext without knowing the secret key?,"Yes, the attacker can decipher the plaintext of the blocks without knowing the secret key k, based on the server's responses."
+What is initialized with a random Nonce in CTR mode?,A counter (ctr) is initialized with a random Nonce in CTR mode.
+How is the counter for each block calculated in CTR mode?,The counter for each block is calculated as ctr(i) = ctr(i-1) + 1.
+What is the formula for encrypting the i-th block in CTR mode?,The formula for encrypting the i-th block is ci = mi ⊕ Ek(Nonce||ctr(i)).
+What is the formula for decrypting the i-th block in CTR mode?,The formula for decrypting the i-th block is mi = ci ⊕ Ek(Nonce||ctr(i)).
+Which cryptographic algorithm is used as an example in CTR mode?,AES (Advanced Encryption Standard) is used as an example in CTR mode.
+What does Nonce represent in the context of CTR mode encryption?,Nonce represents a number used once and is combined with the counter to ensure each encryption is unique.
+"In CTR mode, what operation is applied between the plaintext and the keystream?","In CTR mode, the XOR (⊕) operation is applied between the plaintext and the keystream."
+What is the block length for encryption in GCM mode?,The block length for encryption in GCM mode is 128 bits.
+How does GCM mode encrypt data?,GCM mode encrypts data using a block cipher in CTR (Counter) mode.
+What is the purpose of multiplication in the Galois field GF(2^128) in GCM mode?,"The multiplication in the Galois field GF(2^128) is used for authenticating the encrypted data, providing provenance."
+What are the inputs required for GCM mode?,"The inputs required for GCM mode are plaintext m, key k, and initialization vector IV, along with possibly additional associated data (AD), such as header data."
+What does GCM mode provide in terms of associated data (AD)?,GCM mode provides authenticity for the associated data (AD) as well as the ciphertext.
+What AEAD property does GCM mode implement?,GCM mode implements the AEAD (Authenticated Encryption with Associated Data) property.
+What two types of authenticity does GCM mode ensure?,GCM mode ensures the authenticity of the ciphertext (AE) and the authenticity of associated data (AD).
+What does GCM stand for in the context of cryptography?,GCM stands for Galois/Counter Mode.
+What are AEAD properties in relation to GCM mode?,"AEAD properties refer to Authenticated Encryption with Associated Data, which ensures both confidentiality and authenticity of the data."
+Why is GCM mode considered secure for cryptographic operations?,"GCM mode is considered secure because it combines the counter mode of operation with a universal hash function, providing both encryption and integrity protection."
+What is the main advantage of using GCM mode in cryptographic protocols?,"The main advantage of using GCM mode is its ability to process data in parallel, which provides high performance in encryption and decryption."
+Can GCM mode be used with any block cipher?,"No, GCM mode is specifically designed to be used with block ciphers that operate in 128-bit block size and are approved for use, such as AES."
+What algorithm is recommended by BSI for implementing stream ciphers?,The recommended algorithm by BSI for implementing stream ciphers is AES in CTR mode.
+What is the role of the secret seed value in AES for stream ciphers?,The secret seed value in AES for stream ciphers is the secret AES key k.
+How is the 128-bit key stream (KS) generated in AES operations?,The 128-bit key stream (KS) is generated for each AES operation.
+Can the key stream (KS) be generated without knowledge of the plaintext?,"Yes, the key stream (KS) can be generated in advance without knowledge of the plaintext for fast encryption."
+Does the 128-bit key stream (KS) change with each AES operation?,"Yes, the 128-bit key stream (KS) changes with each AES operation."
+What is the primary requirement for asymmetric cryptographic methods regarding the keys e and d?,The primary requirement is that Dd(Ee(m)) = m for all plaintexts m.
+What must be kept secret in asymmetric cryptography?,The private key d must be kept secret.
+Can the private key d be efficiently calculated from the public key e in asymmetric cryptography?,"No, d cannot be efficiently calculated from e."
+What is a one-way function in the context of asymmetric cryptography?,"A one-way function f : X → Y is a function where for all x in X, f(x) is efficiently computable, but for all y in Y, f-1(y) = x is not efficiently computable."
+What defines a trapdoor one-way function?,A trapdoor one-way function allows the original inputs to be efficiently computable with additional information.
+What is the definition of an one-way function in the context of factorization?,"A one-way function in the context of factorization is defined as f(p, q) = p * q = n, where it is easy to compute n from its factors p and q."
+What is the difficulty associated with the prime factorization problem?,"The difficulty associated with the prime factorization problem is f-1(n) = (p, q), which is hard to compute."
+Which cryptographic method utilizes the concept of factorization and prime factorization problem?,The RSA method utilizes the concept of factorization and the prime factorization problem.
+What is the one-way function related to the discrete logarithm problem?,"The one-way function related to the discrete logarithm problem is defined as f(x) = g^x mod p = y, which is easy to compute."
+What characterizes the discrete logarithm problem in cryptography?,"The discrete logarithm problem is characterized by its difficulty; specifically, computing x = f-1(y) = log_g(y) mod p is hard."
+Which cryptographic method is associated with the discrete logarithm problem?,The Diffie-Hellman (DH) method is associated with the discrete logarithm problem.
+What is the RSA algorithm based on?,"The RSA algorithm is based on number theory, particularly the work of Fermat and Euler."
+What does Euler's Phi function represent?,"Euler's Phi function, denoted as φ(m), represents the count of integers a such that 1 <= a <= m and gcd(a,m) = 1, meaning a is relatively prime to m."
+What is the value of φ(p) for a prime number p?,"For a prime number p, φ(p) = p - 1."
+"What are the first steps in calculating an RSA key pair (e, d)?","1. Choose two large, secret prime numbers p and q (greater than 1024 bits). 2. Calculate the RSA modulus n = pq, which is public, while p and q remain secret."
+How is φ(n) calculated in RSA key generation?,"φ(n) is calculated as (p - 1)(q - 1), which is efficient to compute since p and q are prime."
+What condition must e satisfy in the RSA key generation process?,"The chosen e must be in the range {1, 2, …, φ(n)-1} and must satisfy gcd(φ(n), e) = 1."
+What is the relationship between e and d in the RSA algorithm?,"d is computed such that ed ≡ 1 mod φ(n), establishing the private key d based on the public key e."
+What are p and q referred to in the context of RSA key generation?,p and q are referred to as Trapdoor information because knowing them allows the calculation of φ(n).
+"What is the encryption function in RSA when given plaintext x and the pair (e, n)?","The encryption function is RSAe(x) = x^e mod n = y, where x, y ∈ ℤn."
+How is decryption performed in RSA given y and the private exponent d?,Decryption is performed as x = RSAd(y) = y^d mod n.
+What is the required bit size for the modulus n in RSA encryption to ensure security?,"The modulus n must be large, ideally between 3072 bits and 4096 bits."
+Why is textbook RSA encryption considered deterministic and insecure?,"Textbook RSA encryption is deterministic and insecure because it produces the same ciphertext for the same plaintext every time, making it susceptible to various attacks."
+What is a recommended solution to improve the security of RSA encryption?,"A recommended solution is the embedding of padding schemes, such as PKCS #1 RSA-OAEP (Optimal Asymmetric Encryption Padding)."
+What are the values of p and q used in the RSA example provided?,p = 251 and q = 269.
+"How is n calculated in the RSA method, and what is its value in this example?","n is calculated by multiplying p and q, thus n = pq = 67519."
+What is the value of φ(n) in the given RSA example?,The value of φ(n) is 67000.
+What are the chosen values for e and d in the RSA encryption example?,The chosen values are e = 50253 and d = 27917.
+"What is the relationship between e, d, and φ(n) in the RSA method?",The relationship is that ed ≡ 1 (mod φ(n)).
+What range of values can be encrypted with n in the RSA example?,"Values in the range {0, …, 67518} can be encrypted with n."
+How many bits are used in the block of characters being encrypted in the RSA example?,A block with 2 characters (16 bits) is being used for encryption.
+What is the plaintext message provided in the RSA example?,The plaintext message is 'RSA works!'.
+What problem do public-key methods like RSA face due to their large keys?,Public-key methods like RSA require high computational and memory resources due to the size of the public and private keys.
+What is the discrete logarithm problem (DLP) in the context of public-key cryptography?,"The discrete logarithm problem (DLP) involves finding an integer x such that f(x) = g^x mod p = y, where p is a prime and g ≤ p."
+How can shorter keys be achieved while maintaining security in cryptography?,"Shorter keys can be achieved by using cyclic groups where the discrete logarithm problem is hard to solve, such as elliptic curves."
+What kind of structure does the solution to the problem of finding shorter keys involve?,"The solution involves elliptic curves, specifically the set of points on an elliptic curve forming the needed group."
+What is the key feature of Elliptic Curve Cryptography (ECC) compared to traditional public-key methods like RSA?,Elliptic Curve Cryptography (ECC) provides equivalent security with significantly shorter key lengths compared to traditional methods like RSA.
+What is an elliptic curve (EC)?,An elliptic curve is a set of points that satisfies a polynomial equation.
+What is the equation that defines an elliptic curve E over the field Zp?,"The elliptic curve E over the field Zp is defined by the equation y² = x³ + ax + b mod p, with the condition that 4a³ + 27b² ≠ 0."
+What do the parameters a and b define in an elliptic curve equation?,The parameters a and b define the shape of the respective elliptic curve.
+What group is formed with the operation ∔ on points of the elliptic curve?,"The abelian group (Zp² ∪ θ, ∔) is formed with the operation ∔ on points of the elliptic curve."
+What is the significance of the condition 4a³ + 27b² ≠ 0 in the context of elliptic curves?,The condition 4a³ + 27b² ≠ 0 ensures that the elliptic curve is non-singular and can be used for cryptographic applications.
+Provide an example of an elliptic curve in the real numbers.,An example of an elliptic curve in the real numbers is E(ℝ): y² = x³ - 3x + 3.
+What is the operation of addition defined on points of an elliptic curve E and how is it commutative?,"The operation of addition on points P and Q of an elliptic curve E is defined as P + Q = Q + P, which is commutative."
+What is the associative property of addition for points on an elliptic curve?,"The associative property states that (P + Q) + R = Q + (P + R) for points P, Q, R on an elliptic curve."
+"What is the neutral element in the context of addition on an elliptic curve, and how does it relate to point P?","The neutral element is the imaginary point θ, and it satisfies P + θ = θ + P = P for any point P on the elliptic curve."
+What does the inverse element mean in terms of elliptic curve operations?,"The inverse element -P satisfies the equation P + (-P) = θ, which means that adding P and its inverse results in the neutral element."
+How is scalar multiplication defined in the context of elliptic curves?,Scalar multiplication n·P is defined as adding the point P to itself n times (P + P + ... + P). It is efficiently computable.
+Describe the geometric construction method for the addition of two points P1 and P2 on an elliptic curve.,"To add points P1 and P2 geometrically, draw a line through P1 and P2 which intersects the elliptic curve E at a third point P3'. If the line does not intersect the curve, the result is θ. The reflection of P3' across the x-axis yields the resulting point P3."
+What does ECC stand for in the context of cryptography?,ECC stands for Elliptic Curve Cryptography.
+What is the significance of Zp in elliptic curves?,Zp is a prime field over which the elliptic curve E is defined.
+What is a generator element in the context of elliptic curves?,A generator element G on the curve E is a point used to generate the public key.
+"How is the asymmetric key pair (T, d) generated in ECC?","The key pair is generated by choosing a secret integer d and calculating T = dG, where T becomes the public key."
+What is the ECDL problem in elliptic curve cryptography?,"The ECDL problem, or EC Discrete Log problem, involves finding the integer d such that T = dG, where T is a given point on the curve."
+Why is the ECDL problem considered difficult to solve?,"The ECDL problem is difficult due to the mathematical properties of elliptic curves, which make it hard to derive d from T and G."
+What is the range for the integer d in the context of ECC key generation?,"The integer d must satisfy the condition 1 ≤ d ≤ E, where E is the order of the elliptic curve."
+Explain the operation T = d · G in terms of elliptic curves.,The operation T = d · G represents the repeated addition of the point G d times on the elliptic curve to generate the point T.
+What is the security level of a cryptographic method measured in bits?,"A cryptographic method achieves a security level of n bits if successful attacks require an effort equivalent to executing 2^n encryptions of an efficient block cipher (e.g., AES)."
+"In symmetric cryptographic methods, what does a security level of n bits correspond to?","In symmetric cryptographic methods, a security level of n bits corresponds to brute-forcing a keyspace of 2^n keys."
+What are the key lengths required for symmetric AES methods to achieve different security levels?,"For a security level of 128 bits, use AES-128; for 256 bits, use AES-256; for 192 bits, use AES-192."
+What RSA key length is recommended for a security level of 128 bits?,A security level of 128 bits requires an RSA key length of 3072 bits.
+What ECC key lengths correspond to security levels of 256 bits and 384 bits?,ECC requires a key length of 521 bits for a security level of 256 bits and a key length of 384 bits for a security level of 384 bits.
+What is the key length required for RSA to achieve a security level of 256 bits?,"To achieve a security level of 256 bits, RSA requires a key length of 7680 bits."
+How does the key length of ECC compare to RSA in terms of required bits for the same security level?,ECC requires significantly shorter key lengths compared to RSA for equivalent security levels.
+What is the main threat posed by powerful quantum computers to current encryption methods?,"Powerful quantum computers can solve problems like factoring and the discrete logarithm problem in polynomial time using the Shor algorithm, thereby threatening asymmetric encryption methods."
+Which asymmetric cryptographic algorithms are identified as insecure due to the capabilities of quantum computers?,"RSA, ECDSA, DH, and ECDH are identified as insecure due to the capabilities of quantum computers."
+What are the requirements for RSA 4096 encryption to remain secure against quantum attacks?,It requires a quantum computer with a minimum of 1 million qubits to break RSA 4096 encryption.
+What does the Grover algorithm do that affects symmetric encryption methods?,"Grover's algorithm significantly accelerates the search time for finding keys, effectively cutting the effort for a brute-force attack by half."
+What is the implication of Grover's algorithm on the required key length for symmetric encryption?,"As a consequence of Grover's algorithm, key lengths of greater than 256 bits are necessary to ensure security against quantum attacks."
+What is PQC and why is it necessary?,"PQC stands for post-quantum cryptography, and it is necessary to develop new encryption methods that can withstand attacks from quantum computers."
+What was the purpose of the NIST selection process initiated in 2016 regarding PQC candidates?,The purpose was to evaluate and select post-quantum cryptography (PQC) candidates for standardization.
+Which four PQC methods were selected for standardization by NIST in 2022?,"The four methods selected were CRYSTALS-KYBER (for encryption and key exchange), CRYSTALS-DILITHIUM (digital signature), FALCON (digital signature), and SPHINCS+ (digital signature based on hash)."
+What type of cryptography do CRYSTALS-KYBER and CRYSTALS-DILITHIUM utilize?,Both CRYSTALS-KYBER and CRYSTALS-DILITHIUM are lattice-based cryptographic methods.
+What future expectation does the BSI have regarding quantum computers?,The BSI expects sufficiently large quantum computers to be available starting in the 2030s.
+What recommendation does the BSI give for cryptographic methods in light of potential quantum threats?,"The BSI recommends using hybrid methods, which combine PQC with classical algorithms."
+What is meant by 'cryptoagility' in the context of cryptographic design?,Cryptoagility refers to the need for more flexible cryptographic designs that can adapt to emerging threats and changes in technology.
+Why are companies with long-life products implementing PQC already?,These companies are implementing PQC to protect their products against future quantum threats.
